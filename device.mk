@@ -104,8 +104,8 @@ PRODUCT_COPY_FILES += \
 # bluez config
 PRODUCT_COPY_FILES += \
     device/htc/primou/prebuilt/etc/dbus.conf:system/etc/dbus.conf \
-    device/htc/primou/prebuilt/etc/dbus-1/system-services/org.bluez.service:system/etc/dbus-1/system-services/org.bluez.service
-
+    device/htc/primou/prebuilt/etc/dbus-1/system-services/org.bluez.service:system/etc/dbus-1/system-services/org.bluez.service \
+    device/htc/primou/prebuilt/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/primou/prebuilt/root/kernel
