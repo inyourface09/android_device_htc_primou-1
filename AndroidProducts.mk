@@ -18,4 +18,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/ev_primou.mk
+    $(LOCAL_DIR)/device.mk

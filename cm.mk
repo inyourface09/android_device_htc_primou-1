@@ -1,17 +1,14 @@
-$(call inherit-product, device/htc/primou/ev_primou.mk)
+$(call inherit-product, device/htc/primou/device.mk)
 
 PRODUCT_RELEASE_NAME := One_V
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/ev/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/ev/config/gsm.mk)
+$(call inherit-product, vendor/cm/config/gsm.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_primou BUILD_FINGERPRINT=htc_europe/htc_primou/primou:4.1.1/JRO03L/330937:user/release-keys PRIVATE_BUILD_DESC="4.1.1 JRO03L 330937 release-keys"
 
-PRODUCT_NAME := ev_primou
+PRODUCT_NAME := cm_primou
 PRODUCT_DEVICE := primou
-
-#PRODUCT_COPY_FILES += \
-#    device/htc/primou/prebuilt/app/UsbMassStorageToggle.apk:system/app/UsbMassStorageToggle.apk

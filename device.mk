@@ -62,6 +62,7 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/primou/overlay
 
 # GPS / Lights / Sensors
 PRODUCT_PACKAGES += \
+    libbt-vendor \
     gps.primou \
     lights.primou \
     sensors.primou
