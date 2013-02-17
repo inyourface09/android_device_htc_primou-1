@@ -29,6 +29,7 @@ USE_CAMERA_STUB := true
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
+<<<<<<< HEAD
 -include vendor/htc/primou/BoardConfigVendor.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := primou
@@ -53,14 +54,10 @@ TARGET_PROVIDES_LIBLIGHTS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 585101312
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1232072704
-BOARD_BOOTIMAGE_PARTITION_SIZE := 4194304
+BOARD_BOOTIMAGE_PARTITION_SIZE := 4304304
 BOARD_FLASH_BLOCK_SIZE := 262144
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
-
-TARGET_KERNEL_SOURCE := kernel/htc/msm7x30
-TARGET_KERNEL_CONFIG := cyanogen_primou_defconfig
-TARGET_PREBUILT_KERNEL := device/htc/primou/prebuilt/root/kernel
 
 # This is needed so CWM will function properly
 
@@ -68,15 +65,15 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk0p32
 BOARD_USES_MMCUTILS := false
+
+# PMEM
+TARGET_USES_PMEM := true
+
 BOARD_HAS_NO_MISC_PARTITION := false
 
-BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
-# Actual UMS different from TWRP for some reason
-
-BOARD_UMS_LUNFILE := /sys/class/android_usb/f_mass_storage/lun0/file
-
-# Script
-
-TARGET_RECOVERY_INITRC := device/htc/primou/recovery/init-cwm.rc
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/primou/bluetooth

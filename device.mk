@@ -14,21 +14,13 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # The gps config appropriate for this device
-PRODUCT_COPY_FILES += \
-    device/htc/primou/prebuilt/etc/gps.conf:system/etc/gps.conf
 
-# media
 PRODUCT_COPY_FILES += \
-    device/htc/primou/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/primou/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    device/htc/primou/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf
+    device/htc/primou/configs/gps.conf:system/etc/gps.conf
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
@@ -57,6 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
+<<<<<<< HEAD
 	
 DEVICE_PACKAGE_OVERLAYS += device/htc/primou/overlay
 
@@ -136,5 +129,47 @@ PRODUCT_COPY_FILES += \
 # HTC Audio
 $(call inherit-product, device/htc/primou/media_a1026.mk)
 $(call inherit-product, device/htc/primou/media_htcaudio.mk)
+
+# Inherit qcom proprietary blobs
+$(call inherit-product, vendor/qcom/proprietary/qcom-vendor.mk)
+
+# Media Profiles
+PRODUCT_COPY_FILES += \
+    device/htc/primou/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/htc/primou/configs/media_codecs.xml:system/etc/media_codecs.xml
+
+# ACDB
+PRODUCT_COPY_FILES += \
+    device/htc/primou/configs/default.acdb:system/etc/firmware/default.acdb \
+    device/htc/primou/configs/default_org.acdb:system/etc/firmware/default_org.acdb
+
+# Audio DSP Profiles
+PRODUCT_COPY_FILES += \
+    device/htc/primou/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
+    device/htc/primou/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
+    device/htc/primou/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
+    device/htc/primou/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv 
+	
+
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+
+# BCM4330 firmware
+PRODUCT_COPY_FILES += \
+    device/htc/primou/firmware/bcm4330.hcd:system/etc/firmware/bcm4330.hcd \
+    device/htc/primou/firmware/fw_bcm4330_apsta_b1.bin:system/etc/firmware/fw_bcm4330_apsta_b1.bin \
+    device/htc/primou/firmware/fw_bcm4330_apsta_b2.bin:system/etc/firmware/fw_bcm4330_apsta_b2.bin \
+    device/htc/primou/firmware/fw_bcm4330_b2.bin:system/etc/firmware/fw_bcm4330_b2.bin \
+    device/htc/primou/firmware/fw_bcm4330_b1.bin:system/etc/firmware/fw_bcm4330_b1.bin \
+    device/htc/primou/firmware/fw_bcm4330_p2p_b2.bin:system/etc/firmware/fw_bcm4330_p2p_b2.bin \
+    device/htc/primou/firmware/fw_bcm4330_p2p_b1.bin:system/etc/firmware/fw_bcm4330_p2p_b1.bin \
+    device/htc/primou/firmware/calibration:system/etc/calibration
+
+# BT vendor configuration
+PRODUCT_COPY_FILES += \
+    device/htc/primou/configs/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+
+# HTC BT audio config
+PRODUCT_COPY_FILES += \
+    device/htc/primou/configs/AudioBTID.csv:system/etc/AudioBTID.csv
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)

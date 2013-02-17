@@ -42,4 +42,3 @@
         android:allowMassStorage="true"
         android:removable="true" />
 </StorageList>
-
