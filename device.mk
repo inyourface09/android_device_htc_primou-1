@@ -49,7 +49,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
-<<<<<<< HEAD
 	
 DEVICE_PACKAGE_OVERLAYS += device/htc/primou/overlay
 
