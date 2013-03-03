@@ -29,7 +29,6 @@ USE_CAMERA_STUB := true
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
-<<<<<<< HEAD
 -include vendor/htc/primou/BoardConfigVendor.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := primou
@@ -39,6 +38,7 @@ BOARD_KERNEL_BASE := 0x14300000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
 TARGET_PROVIDES_LIBLIGHTS := true
+TARGET_NO_HW_VSYNC := true
 
 # cat /proc/emmc
 #dev:        size     erasesize name

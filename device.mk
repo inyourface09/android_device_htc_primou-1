@@ -89,11 +89,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/primou/prebuilt/etc/init.d/01swap:system/etc/init.d/01swap
 
-# patched zram scripts
-PRODUCT_COPY_FILES += \
-    device/htc/primou/prebuilt/bin/compcache:system/bin/compcache \
-    device/htc/primou/prebuilt/bin/handle_compcache:system/bin/handle_compcache
-
 # bluez config
 PRODUCT_COPY_FILES += \
     device/htc/primou/prebuilt/etc/dbus.conf:system/etc/dbus.conf \
