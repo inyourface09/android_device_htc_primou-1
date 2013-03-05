@@ -145,19 +145,6 @@ PRODUCT_COPY_FILES += \
     device/htc/primou/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv 
 	
 
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
-
-# BCM4330 firmware
-PRODUCT_COPY_FILES += \
-    device/htc/primou/firmware/bcm4330.hcd:system/etc/firmware/bcm4330.hcd \
-    device/htc/primou/firmware/fw_bcm4330_apsta_b1.bin:system/etc/firmware/fw_bcm4330_apsta_b1.bin \
-    device/htc/primou/firmware/fw_bcm4330_apsta_b2.bin:system/etc/firmware/fw_bcm4330_apsta_b2.bin \
-    device/htc/primou/firmware/fw_bcm4330_b2.bin:system/etc/firmware/fw_bcm4330_b2.bin \
-    device/htc/primou/firmware/fw_bcm4330_b1.bin:system/etc/firmware/fw_bcm4330_b1.bin \
-    device/htc/primou/firmware/fw_bcm4330_p2p_b2.bin:system/etc/firmware/fw_bcm4330_p2p_b2.bin \
-    device/htc/primou/firmware/fw_bcm4330_p2p_b1.bin:system/etc/firmware/fw_bcm4330_p2p_b1.bin \
-    device/htc/primou/firmware/calibration:system/etc/calibration
-
 # BT vendor configuration
 PRODUCT_COPY_FILES += \
     device/htc/primou/configs/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
